@@ -225,8 +225,9 @@ def engagement_boost_2pt(engagements):
     return results_list
 
 # Example Usage:
-# print(engagement_boost_2pt([-4, -1, 0, 3, 10]))
+print(engagement_boost_2pt([-4, -1, 0, 3, 10]))
 print(engagement_boost_2pt([-7, -3, 2, 3, 11]))
+print(engagement_boost_2pt([-20, -10, -7, -3, 2, 3, 11, 20]))
 
 '''Example Output:
 
