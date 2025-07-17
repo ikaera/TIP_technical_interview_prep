@@ -20,25 +20,51 @@ def print_linked_list(head):
 def add_two_numbers(head_a, head_b):
     '''
     U - Understand
-        I - Input
-        O - Output 
+        I - Input - the heads of two non-empty linked lists, prize_a and prize_b
+        O - Output - revresed linked list representing the sum of the two numbers
         C - constraints/considerations
+            the heads of two non-empty linked lists, prize_a and prize_b, representing two non-negative integers
         E - example/edge cases
     M - Match
-        P - Plan
+    P - Plan
         High-level: 
-
-        Steps: 
-
+        Steps:
+        1. build integer from linked list a
+        2. build integer from linked list b
+        3. add the two integers then reverse the sum
+        4. build a new linked list from the sum
+        5. return the new linked list
     I - Implement
     '''
-    pass
+    current_a = head_a
+    sum_a = 0
+    while current_a:
+        sum_a = sum_a * 10 + current_a.value
+        current_a = current_a.next
+        
+    current_b = head_b
+    sum_b = 0
+    while current_b:
+        sum_b = sum_b * 10 + current_b.value
+        current_b = current_b.next
 
+    total_sum = sum_a + sum_b
+    # Reverse the total_sum and build a new linked list
+    temp_head = Node(0)
+    current = temp_head
+    while total_sum:
+        digit = total_sum % 10        
+        new_node = Node(digit)  # Space complexity O(1)
+        current.next = new_node
+        current = current.next
+        total_sum =  total_sum // 10
+        # print(current.value)         
+    return temp_head.next
 # Example Usage:
 # 342 and 465 and their sum 807 as linked lists with reversed digits
 
-head_a = Node(2, Node(4, Node(3))) # 342
-head_b = Node(5, Node(6, Node(4))) # 465
+head_a = Node(2, Node(4, Node(3))) # 342  243
+head_b = Node(5, Node(6, Node(4))) # 465  564
 
 print_linked_list(add_two_numbers(head_a, head_b))
 '''Example Output:
