@@ -1,4 +1,3 @@
-
 # Testing your Binary Tree (Printing)
 from collections import deque 
 
@@ -31,29 +30,21 @@ root = TreeNode(1, TreeNode(2, TreeNode(4)), TreeNode(3, TreeNode(5), TreeNode(6
 # print_tree(root)
 # print_tree(None)
 
-'''    U - Understand
-        I - Input
-        O - Output 
-        C - constraints/considerations
-        E - example/edge cases
-    P - Plan
-        High-level: 
 
-        Steps: 
-
-    I - Implement
 '''
 
+U-nderstand:
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+M-atch:
+P-lan:
+    High-level: 
 
-'''    U - Understand
-        I - Input
-        O - Output 
-        C - constraints/considerations
-        E - example/edge cases
-    P - Plan
-        High-level: 
+    Steps: 
+        1. 
+        2. 
 
-        Steps: 
-
-    I - Implement
+I-Implement
 '''
