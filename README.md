@@ -104,33 +104,35 @@ TIP_technical_interview_prep/
 
 ### Core Curriculum
 
-| Unit | Focus Area          | Key Concepts                     |
-| ---- | ------------------- | -------------------------------- |
-| 1    | Strings & Arrays    | Manipulation, searching, sorting |
-| 2    | Dictionaries        | Hashing, frequency counting      |
-| ...  | ...                 | ...                              |
-| 12   | Dynamic Programming | Memoization, tabulation          |
+| Unit   | Focus Area          | Key Concepts            | Problem Types             |
+| ------ | ------------------- | ----------------------- | ------------------------- |
+| **1**  | Strings & Arrays    | Sliding window, sorting | Two-sum, subarrays        |
+| **2**  | Dictionaries        | Hashing, counting       | Anagrams, duplicates      |
+| **3**  | Stacks & Queues     | LIFO/FIFO, two-pointers | Parentheses, sorting      |
+| **4**  | Review I            | Mixed concepts          | Combined problems         |
+| **5**  | Linked Lists I      | Pointers, traversal     | Reversal, cycles          |
+| **6**  | Linked Lists II     | Advanced pointers       | Merging, intersections    |
+| **7**  | Recursion           | Backtracking, trees     | Permutations, Fibonacci   |
+| **8**  | Binary Trees I      | DFS/BFS                 | Depth, symmetry           |
+| **9**  | Binary Trees II     | Construction            | LCA, validation           |
+| **10** | Graphs I            | Traversal               | Islands, cloning          |
+| **11** | Graphs II           | Path algorithms         | Shortest path, scheduling |
+| **12** | Dynamic Programming | Memoization             | Knapsack, edit distance   |
+
+[↑ Back to Table of Contents](#table-of-contents)
 
 ### Problem Sets
 
-- **Standard Set 1**: Foundational problems (15-20)
-- **Standard Set 2**: Reinforcement problems (10-15)
-- **Advanced Set 1**: Challenging applications (8-12)
-- **Advanced Set 2**: Expert-level problems (5-8)
+- **Standard Set 1**: Foundational problems
+- **Standard Set 2**: Reinforcement problems
+- **Advanced Set 1**: Challenging applications
+- **Advanced Set 2**: Expert-level problems
 
 [↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
 ## How to Use This Repository
-
-```mermaid
-graph TD
-    A[Select Unit] --> B[Standard Set 1]
-    B --> C[Standard Set 2]
-    C --> D[Advanced Set 1]
-    D --> E[Advanced Set 2]
-```
 
 1. **For Beginners**:
 
@@ -154,7 +156,6 @@ graph TD
 
 **Problem Submission Template:**
 
-````markdown
 ### Problem Title
 
 **Difficulty**: [Easy/Medium/Hard]
@@ -172,7 +173,6 @@ graph TD
 def solution(params):
     # Implementation
 ```
-````
 
 **Complexity**:
 
