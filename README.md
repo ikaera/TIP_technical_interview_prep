@@ -4,7 +4,6 @@
 
 - [Description](#description)
 - [UMPIRE + IOCE Methodology](#umpire--ioce-methodology)
-- [Repository Structure](#repository-structure)
 - [Problem Organization](#problem-organization)
 - [How to Use This Repository](#how-to-use-this-repository)
 - [Contribution Guidelines](#contribution-guidelines)
@@ -72,31 +71,6 @@ A comprehensive technical interview preparation system using the UMPIRE problem-
 [↑ Back to Table of Contents](#table-of-contents)
 
 ---
-
-## Repository Structure
-
-```
-TIP_technical_interview_prep/
-│
-├── Unit_1_Strings_Arrays/
-│   ├── Standard_Set_1/
-│   │   ├── two_sum/
-│   │   │   ├── problem.md
-│   │   │   ├── solution.py
-│   │   │   ├── test_cases.txt
-│   │   │   └── analysis.md
-│   │   └── ...
-│   ├── Standard_Set_2/
-│   ├── Advanced_Set_1/
-│   └── Advanced_Set_2/
-│
-├── Unit_2_Dictionaries/
-│   └── ... (same structure)
-│
-└── ... (all 12 units)
-```
-
-[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -200,7 +174,27 @@ Special thanks to the CodePath team for developing the UMPIRE framework and maki
 
 ## License
 
-[MIT License](https://choosealicense.com/licenses/mit/) © 2025 Technical Interview Prep
+[MIT License](https://choosealicense.com/licenses/mit/)
+
+Copyright (c) 2025 Irakli Eradze
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [↑ Back to Table of Contents](#table-of-contents)
 
