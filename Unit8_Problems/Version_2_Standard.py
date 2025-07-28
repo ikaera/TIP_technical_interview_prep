@@ -31,7 +31,8 @@ root = TreeNode(1, TreeNode(2, TreeNode(4)), TreeNode(3, TreeNode(5), TreeNode(6
 # print_tree(root)
 # print_tree(None)
 
-'''    U - Understand
+'''    
+    U - Understand
         I - Input
         O - Output 
         C - constraints/considerations
@@ -45,7 +46,8 @@ root = TreeNode(1, TreeNode(2, TreeNode(4)), TreeNode(3, TreeNode(5), TreeNode(6
 '''
 
 
-'''    U - Understand
+'''    
+    U - Understand
         I - Input
         O - Output 
         C - constraints/considerations

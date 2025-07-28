@@ -161,7 +161,177 @@ Example Output:
 
 12
 '''
-'''    U - Understand
+''' 
+Write a function to determine if a binary tree is balanced. A binary tree is considered balanced if the height difference between the left and right subtrees of every node is at most 1.
+Examples:
+
+
+    U - Understand
+        I - Input root 
+        O - Output true/false
+        C - constraints/considerations
+
+        E - example/edge cases
+            Input: root = [3, 9, 20, null, null, 15, 7]
+            Output: True
+            Input: root = [1, 2, 2, 3, 3, null, null, 4, 4]
+Output: False
+    P - Plan
+        High-level: 
+
+        Steps: 
+        1. use func helper(node, height)
+        2. base case: At the very bottom of the tree (i.e., node is None), we return True and set the height to 0.
+        3. Recurse on left and right subtrees:
+            1. Declare two new lists for height: left_height = [0], right_height = [0]
+            2. Recursively call the helper on the left and right children
+        4. Compute height and check balance at current node
+            1. Calculate the current node's height:
+                left_height[0] and right_height[0] are the heights of the left and right subtrees.
+                    height[0] = max(left_height[0], right_height[0]) + 1
+                    why? 
+                    -We take the maximum of the two because the height of the current node depends on the tallest subtree.
+                    -Then we add 1 to count the edge from the current node down to its child subtree.
+            2. Then check if this node is balanced:
+           
+        Step 5: Combine results
+        Step 6: Main Function
+            Now call your helper function from the main isBalanced(root):
+
+    I - Implement
+'''
+def is_balanced(root):
+
+    def helper(node, height):
+        # base case:
+        if node is None:
+            height[0] = 0
+            return True
+        # recurse on left and rigth subtrees:
+        left_height = [0]
+        right_height = [0]
+
+        left_balanced=helper(node.left, left_height)
+        right_balanced =helper(node.right, right_height)
+
+        height[0] = max(left_height[0], right_height[0]) + 1
+
+        if abs(left_height[0] - right_height[0]) > 1:
+            return False
+        
+        return left_balanced and right_balanced
+    return helper(root, [0])
+
+
+# Helper to build trees manually (for testing)
+# Test input 1: root = [3, 9, 20, None, None, 15, 7]
+root1 = TreeNode(3,
+                 TreeNode(9),
+                 TreeNode(20,
+                          TreeNode(15),
+                          TreeNode(7)))
+
+print(is_balanced(root1))  # Expected: True
+
+# Test input 2: root = [1, 2, 2, 3, 3, None, None, 4, 4]
+root2 = TreeNode(1,
+                 TreeNode(2,
+                          TreeNode(3,
+                                   TreeNode(4),
+                                   TreeNode(4)),
+                          TreeNode(3)),
+                 TreeNode(2))
+
+print(is_balanced(root2))  # Expected: False
+
+'''  
+Write a function to determine if a binary tree is a valid binary search tree (BST). A BST is valid if:
+The left subtree of a node contains only nodes with values less than the node’s value.
+The right subtree of a node contains only nodes with values greater than the node’s value.
+Both left and right subtrees must also be valid BSTs.
+Examples:
+Input: root = [2, 1, 3]
+Output: True
+Input: root = [5, 1, 4, null, null, 3, 6]
+Output: False
+
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+        1. Def helper(node = curr node, min, max)
+            1. base case: 
+            empty node returns true
+            2. Check if node.val is within valid range:
+                min<node.val<max
+            3. Recursively check left subtree
+                all values must be less than current node's value
+            4. Resursively check right subtree
+                all values must be greater than current node's value
+            5. if both subtrees are valid 
+                Return true only 
+                return left_is_valid and right_is_valid                       
+        2. # Initialize recursion with infinite bounds
+        return helper(root, float('-inf'), float('inf')) 
+
+
+    I - Implement
+'''
+
+# Testing your Binary Tree (Printing)
+from collections import deque 
+
+# Tree Node class
+class TreeNode:
+    def __init__(self, value, left=None, right=None):
+        self.val = value
+        self.left = left
+        self.right = right
+
+def print_tree(root):
+    if not root:
+        return "Empty"
+    result = []
+    queue = deque([root])
+    while queue:
+        node = queue.popleft()
+        if node:
+            result.append(node.val)
+            queue.append(node.left)
+            queue.append(node.right)
+        else:
+            result.append(None)
+    while result and result[-1] is None:
+        result.pop()
+    print(result)
+
+root = TreeNode(1, TreeNode(2, TreeNode(4)), TreeNode(3, TreeNode(5), TreeNode(6)))
+
+# print_tree(root)
+# print_tree(None)
+
+'''    
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
+
+
+'''    
+    U - Understand
         I - Input
         O - Output 
         C - constraints/considerations
