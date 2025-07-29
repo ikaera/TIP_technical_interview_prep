@@ -9,7 +9,7 @@ class TreeNode:
       self.right = right
 def print_tree(root):
     if not root:
-        return "Empty"
+        return print("Empty")
     result = []
     queue = deque([root])
     while queue:
@@ -78,9 +78,10 @@ tree_with_keys_and_values = [(1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'), None, (5, '
 key_val_tree = build_tree(tree_with_keys_and_values)
 
 # Using print_tree() function included above 
+'''
 print_tree(val_tree)
 print_tree(key_val_tree) # Only values will be printed
-
+'''
 r'''
 Example Output:
 
