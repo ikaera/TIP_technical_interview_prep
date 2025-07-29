@@ -1,9 +1,9 @@
 from util_printing_generating_tree import print_tree, build_tree
-''' 
+"""
 # Standard Problem Set Version 1
 ## Problem 1: Merging Cookie Orders
 
-You run a local bakery and are given the roots of two binary trees 'order1'and `order2` where each node in the binary tree represents the number of a certain cookie type the customer has ordered. To maximize efficiency, you want to bake enough of each type of cookie for both orders together.
+You run a local bakery and are given the roots of two binary trees `order1` and `order2` where each node in the binary tree represents the number of a certain cookie type the customer has ordered. To maximize efficiency, you want to bake enough of each type of cookie for both orders together.
 
 Given order1 and order2, merge the order together into one tree and return the root of the merged tree. To merge the orders, imagine that when place one tree on top of the other, some nodes of the two trees are overlapped while others are not. If two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the not None node will be used as the node of the new tree.
 
@@ -22,7 +22,7 @@ Evaluate the time complexity of your function. Define your variables and provide
         Steps: 
 
     I - Implement
-'''
+"""
 class TreeNode():
      def __init__(self, quantity, left=None, right=None):
         self.val = quantity
