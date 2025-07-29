@@ -1,7 +1,7 @@
 from util_printing_generating_tree import print_tree, build_tree
 ''' 
-Standard Problem Set Version 1
-Problem 1: Merging Cookie Orders
+# Standard Problem Set Version 1
+## Problem 1: Merging Cookie Orders
 
 You run a local bakery and are given the roots of two binary trees 'order1'and `order2` where each node in the binary tree represents the number of a certain cookie type the customer has ordered. To maximize efficiency, you want to bake enough of each type of cookie for both orders together.
 
