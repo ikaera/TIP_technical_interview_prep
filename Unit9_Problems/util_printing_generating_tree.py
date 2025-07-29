@@ -55,7 +55,7 @@ def build_tree(values):
   return root
 
 # Example Usage:
-"""
+r"""
           1
         /   \
        2     3
@@ -66,7 +66,7 @@ def build_tree(values):
 tree_with_just_values = [1, 2, 3, 4, None, 5, 6]
 val_tree = build_tree(tree_with_just_values)
 
-"""
+r"""
           (1, 'A')
           /       \
        (2, 'B')   (3, 'C')
@@ -81,7 +81,7 @@ key_val_tree = build_tree(tree_with_keys_and_values)
 print_tree(val_tree)
 print_tree(key_val_tree) # Only values will be printed
 
-'''
+r'''
 Example Output:
 
 [1, 2, 3, 4, None, 5, 6]
