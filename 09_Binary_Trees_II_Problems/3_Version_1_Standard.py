@@ -121,7 +121,27 @@ R- Review
 E - evaluate n is num of node and h is height of the treen since it is balanced h = log(n)
     - Time  complexity: O(n) because each node must be visited once
     - Space complexity: O(n) due to the recursive call stack and the n space required to create the merged tree.
+        According to ChatGPT: 
+        Final Space Complexity (Call Stack)
+        For a balanced binary tree (height is log n)
+        If the tree were unbalanced or skewed, it could be O(n) in the worst case
         (think critically about the advantages and disadvantages of your chosen approach).
+
+    https://chat.deepseek.com/a/chat/s/af3487ee-789c-493b-bb2a-904d0f7be0d3
+    Function: merge_orders(order1, order2)
+    !!Termination Conditions: 
+        If either tree is exhausted (None), the recursion stops for that branch =>  
+        This means we only traverse nodes that exist in both trees!!
+    Time Complexity: O(min(N₁, N₂)) where:
+        N₁ = number of nodes in order1
+        N₂ = number of nodes in order2
+    Space Complexity: O(min(N₁, N₂))
+        New tree creation requires O(min(N₁, N₂)) space
+        Recursion stack depth is O(log(min(N₁, N₂))) for balanced trees
+    Key insight: the algorithm's efficiency comes from:
+        1. Only processes the overlapping nodes
+        2. Constant time operations per node
+        3. Recursion depth is limited by smaller tree size
 '''
 
 
