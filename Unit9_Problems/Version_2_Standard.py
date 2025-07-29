@@ -1,4 +1,5 @@
-'''    U - Understand
+'''    
+    U - Understand
         I - Input
         O - Output 
         C - constraints/considerations
@@ -12,7 +13,8 @@
 '''
 
 
-'''    U - Understand
+'''    
+    U - Understand
         I - Input
         O - Output 
         C - constraints/considerations
