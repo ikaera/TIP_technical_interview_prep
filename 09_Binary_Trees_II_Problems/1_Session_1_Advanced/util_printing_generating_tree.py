@@ -9,7 +9,7 @@ class TreeNode:
       self.right = right
 def print_tree(root):
     if not root:
-        return print("Empty") # added print("Empty")
+        return print("Empty")
     result = []
     queue = deque([root])
     while queue:
