@@ -1,4 +1,5 @@
 from util_printing_generating_tree import print_tree, build_tree
+
 """
 # Standard Problem Set Version 1
 ## Problem 1: Merging Cookie Orders
@@ -352,9 +353,223 @@ cake = build_tree(cake_sections)
 # print(max_tiers(cake))
 # print(max_tiers(None))
 
-print(max_tiers_iter(cake))
-print(max_tiers_iter(None))
+# print(max_tiers_iter(cake))
+# print(max_tiers_iter(None))
 # Example Output: 3
+
+'''
+
+R- Review
+
+E - evaluate 
+    - Time  complexity:
+    - Space complexity:
+        (think critically about the advantages and disadvantages of your chosen approach).
+'''
+##############################
+r'''    
+Problem #1: Given the root of a binary tree and an integer target_sum, return True if the tree has a root-to-leaf path such that adding up all the values along the path equals target_sum. A leaf is a node with no children.
+
+U - Understand
+    I - Input - root: TreeNode, targetSum: int
+    O - Output - T / F 
+    C - constraints/considerations
+    E - example/edge cases
+            5
+            / \
+        4   8
+        /   / \
+        11  13  4
+        / \      \
+        7   2      1
+        target_sum = 22
+        Output: True
+        -------------
+            1
+            / \
+            2   3
+            target_sum = 5
+            Output: False
+            ------------
+                1
+                target_sum = 1
+                Output: True
+                ------------------
+M — Match with Patterns
+    Interviewer Prompts & Possible Answers:
+    "What kind of traversal do you think fits best here?"
+    → "Depth-first search makes sense since we're exploring complete paths from root to leaves."
+
+    "Have you seen problems involving root-to-leaf paths before?"
+    → "Yes, similar to problems like path sum collection, max depth, or binary tree path listing."
+
+    "Do you think recursion or iteration would work better for this?"
+    → "Recursion feels more natural because the structure of the problem mirrors the recursive tree traversal. Iteration would need a stack and extra bookkeeping."
+
+    "What's the key insight for solving this recursively?"
+    → "At each node, we reduce the problem by subtracting the current node's value from the target and recursing on children."
+
+P - Plan
+    High-level: At each node, subtract the current node's value from the target. If we reach a leaf and the remaining sum is zero, we return true.
+        - Start at the root. If the tree is empty, return False.
+        - If you're at a leaf, check if the leaf's value matches the remaining target sum.
+        - If not at a leaf, subtract the current node's value from the target sum and repeat the process for the left and right children.
+        - If either child returns True, the answer is True.
+    Steps: 
+        "1. Handle null tree case. 2. Check if current node is a leaf and equals remaining target. 3. Recursively check left and right subtrees with updated target. 4. Return true if either subtree has a valid path."
+    Base cases: 
+        1. (Empty tree) if root is None, that means tree is empty return False, 
+            because there is no path to consider.
+        2. (Leaf node check) if the current node is leaf (both root.left and root.right are None)
+            check if node' value == the remaining `target_sum`
+            if yes return True otherwise False
+    Recursive cases:
+        3. if the current node is not a leaf, to get remaining_sum = target_sum - node's value
+        4. Recursively check the left and right subtree with the updated remaining_sum
+        Return true if either subtree has a valid path (use `or` operator not and )
+I - Implement
+'''
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def hasPathSum(root: TreeNode, target_sum: int) -> bool:
+    if root is None: # Base case:
+        return False
+    if root.left is None and root.right is None:
+        return root.val == target_sum
+    else: # Recursive cases: 
+        remaining_sum = target_sum - root.val
+        left_path = hasPathSum(root.left, remaining_sum)
+        right_path = hasPathSum(root.right, remaining_sum)
+    return left_path or right_path
+'''
+# Test 1: Empty tree
+print(hasPathSum(None, 0))  # Expected: False
+
+# Test 2: Single node that matches target
+print(hasPathSum(TreeNode(5), 5))  # Expected: True
+
+# Test 3: Single node that doesn't match
+print(hasPathSum(TreeNode(3), 5))  # Expected: False
+
+# Test 4: Simple left path (1 -> 2 = 3)
+tree = TreeNode(1, TreeNode(2))
+print(hasPathSum(tree, 3))  # Expected: True
+
+# Test 5: Simple right path (1 -> 3 = 4)
+tree = TreeNode(1, None, TreeNode(3))
+print(hasPathSum(tree, 4))  # Expected: True
+
+# Test 6: No matching path
+tree = TreeNode(1, TreeNode(2), TreeNode(3))
+print(hasPathSum(tree, 5))  # Expected: False
+'''
+'''
+R- Review
+
+E - evaluate 
+    - Time  complexity:
+    - Space complexity:
+        (think critically about the advantages and disadvantages of your chosen approach).
+'''
+
+''' 
+Problem #2
+Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 1. Check if both nodes are null (same). 2. Check if one is null but not the other (different). 3. Check if values are different (different). 4. Recursively check left subtrees and right subtrees.
+
+I - Implement
+'''
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+def isSameTree(p, q):
+    # base cases:
+    if not p and not q:
+        return True
+    # Base case:
+    if not p or not q:
+        return False
+    # base case
+    if q.val != p.val:
+        return False
+    # recursive cases: left and right subtrees
+    left_is_same = isSameTree(p.left, q.left)
+    right_is_same = isSameTree(p.right, q.right)
+
+    return left_is_same and right_is_same
+
+# R- Review
+def test_isSameTree():
+    # Both empty
+    # print("Test 1: Both trees None")
+    assert isSameTree(None, None) == True
+    print("[OK] Passed Test 1: Both trees None")
+    
+    # One empty, one not
+    assert isSameTree(None, TreeNode(1)) == False
+    assert isSameTree(TreeNode(1), None) == False
+    
+    # Single nodes - same
+    assert isSameTree(TreeNode(1), TreeNode(1)) == True
+    
+    # Single nodes - different
+    assert isSameTree(TreeNode(1), TreeNode(2)) == False
+    
+    # Same structure and values
+    tree1 = TreeNode(1, TreeNode(2), TreeNode(3))
+    tree2 = TreeNode(1, TreeNode(2), TreeNode(3))
+    assert isSameTree(tree1, tree2) == True
+    
+    # Same values, different structure
+    tree3 = TreeNode(1, TreeNode(2), None)
+    tree4 = TreeNode(1, None, TreeNode(2))
+    assert isSameTree(tree3, tree4) == False
+    
+    # Different values
+    tree5 = TreeNode(1, TreeNode(2), TreeNode(1))
+    tree6 = TreeNode(1, TreeNode(1), TreeNode(2))
+    assert isSameTree(tree5, tree6) == False
+    print("All test cases passed!")
+
+test_isSameTree()
+'''
+E - evaluate 
+Time: O(min(m,n)) where m and n are the number of nodes in each tree, since we stop as soon as we find a difference. Space: O(min(m,n)) for recursion stack in worst case.
+    - Time  complexity: O(nim(m,n))
+    - Space complexity: O(min(m,n))
+        (think critically about the advantages and disadvantages of your chosen approach).
+'''
+
+
+'''    
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
 '''
 R- Review
 
@@ -386,7 +601,6 @@ E - evaluate
         (think critically about the advantages and disadvantages of your chosen approach).
 '''
 
-
 '''    
 U - Understand
     I - Input
@@ -408,26 +622,100 @@ E - evaluate
     - Space complexity:
         (think critically about the advantages and disadvantages of your chosen approach).
 '''
+###############################
+''' 
+Problem Set Version 2  Clone Detection
+Problem 1: Clone Detection
+You have just started a new job working the night shift at a local hotel, but strange things have been happening and you're starting to think it might be haunted. Lately, you think you've been seeing double of some of the guests.
 
+Given the roots of two binary trees guest1 and guest2 each representing a guest at the hotel, write a function that returns True if they are clones of each other and False otherwise.
 
-'''    
-U - Understand
-    I - Input
-    O - Output 
-    C - constraints/considerations
-    E - example/edge cases
-P - Plan
-    High-level: 
+Two binary trees are considered clones if they are structurally identical, and the nodes have the same values.
 
-    Steps: 
+Evaluate the time complexity of your function. Define your variables and provide a rationale for why you believe your solution has the stated time complexity. Assume the input tree is balanced when calculating time complexity.   
+    U - Understand
+        I - Input: roots of 2 BT - 'guest1' and 'guest2'
+        O - Output: True or False
+        C - constraints/considerations: 
+            Two binary trees are considered clones if they are structurally identical, and the nodes have the same values.
+        E - example/edge cases
+        HAPPY CASE
+            Input: guest1 = TreeNode("John Doe", TreeNode("6 ft"), TreeNode("Brown Eyes")), 
+                guest2 = TreeNode("John Doe", TreeNode("6 ft"), TreeNode("Brown Eyes"))
+            Output: True
+            Explanation: The trees have identical structure and values.
 
-I - Implement
+            Input: guest3 = TreeNode("John Doe", TreeNode("6 ft")),
+                guest4 = TreeNode("John Doe", None, TreeNode("6 ft"))
+            Output: False
+            Explanation: The trees have the same values but different structures, so they are not clones.
+
+        EDGE CASE: (both trees are empty)
+            Input: guest1 = None, guest2 = None
+            Output: True
+            Explanation: Both trees are empty, so they are clones.
+        Edge Case: only one tree is empty but not the other - 
+            Input: guest1 = TreeNode("John Doe"), guest2 = None
+            Output: False
+            Explanation: One tree is empty, and the other is not, so they are not clones.
+    P - Plan
+        High-level: 
+            Recursion
+            Tree traversal: traverse both trees and compare the nodes at each step.
+        Steps: 
+        1. Base cases:
+            1. if both trees are None, => T
+            2. if only one of the guests is None, => F (they cannot be clones)
+        2. Node comparison:
+            check of the current nodes of both guests have same values
+            Recursive cases:        
+            1. Recursively check the left subtree of both trees
+            2. Recursively check the right subtree of both guest1 and guest2
+        3. return T if all checks pass, other F
+    I - Implement
 '''
-'''
-R- Review
+class TreeNode():
+    def __init__(self, value, left=None, right=None):
+        self.val = value
+        self.left = left
+        self.right = right
 
-E - evaluate 
-    - Time  complexity:
-    - Space complexity:
-        (think critically about the advantages and disadvantages of your chosen approach).
+def is_clone(guest1, guest2):
+    if not guest1  and not guest2:
+        return True
+    if guest1 is None or guest2 is None:
+        return False
+    '''guest1.val == guest2.val
+    # Recursive cases: 
+    left_is_clone =is_clone(guest1.left, guest2.left)
+    right_is_clone = is_clone(guest1.right, guest2.right)
+    return left_is_clone and right_is_clone'''
+    # or use this alternative short circuiting method: 
+    return (guest1.val == guest2.val and is_clone(guest1.left, guest2.left) and is_clone(guest1.right, guest2.right))
+
+r""" Example Usage:
+     John Doe               John Doe
+     /      \             /       \
+  6 ft    Brown Eyes      6ft      Brown Eyes
+"""
+guest1 = TreeNode("John Doe", TreeNode("6 ft"), TreeNode("Brown Eyes"))
+guest2 = TreeNode("John Doe", TreeNode("6 ft"), TreeNode("Brown Eyes"))
+
+r"""
+     John Doe         John Doe
+     /                       \
+   6 ft                     6 ft
+"""
+guest3 = TreeNode("John Doe", TreeNode("6 ft"))
+guest4 = TreeNode("John Doe", None, TreeNode("6 ft"))
+
+print(is_clone(guest1, guest2))
+print(is_clone(guest3, guest4))
+print(is_clone(None, None))
+
+r'''
+Example Output:
+
+True
+False
 '''

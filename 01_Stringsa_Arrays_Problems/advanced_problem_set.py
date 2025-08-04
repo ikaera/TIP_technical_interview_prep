@@ -1,9 +1,61 @@
+'''    
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
 
-# U-nderstand
-     # Understand what the interviewer is asking for by using test cases and questions about the problem.
+        Steps: 
 
-# P-lan
-    # Plan the solution with appropriate visualizations and pseudocode.
+    I - Implement
+'''
 
-# I-mplement
-    # Implement the code to solve the algorithm.
+
+
+'''    
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
+
+
+
+
+'''    
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
+
+
+'''    
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
