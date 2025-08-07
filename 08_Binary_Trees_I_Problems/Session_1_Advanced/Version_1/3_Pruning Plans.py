@@ -61,7 +61,7 @@ M-atch:
     Recursion: 
 P-lan:
     High-level: 
-        Traverse the tree using postorder traversal and collect the node values.
+        Traverse the tree using post-order traversal and collect the node values.
     Steps: 
         1. Base case: if not root, return empty list
         2. Recursive case:
