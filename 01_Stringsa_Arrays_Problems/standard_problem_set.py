@@ -1,3 +1,92 @@
+'''
+Problem 1: Hundred Acre Wood
+Write a function welcome() that prints the string "Welcome to The Hundred Acre Wood!".
+
+def welcome():
+	pass
+Example Usage:
+
+welcome()
+Example Output:
+
+Welcome to The Hundred Acre Wood!
+
+U 
+    Input no
+    Output prints the string "Welcome to The Hundred Acre Wood!"
+M
+P
+    - print statement
+I
+'''
+def welcome():
+    print("Welcome to The Hundred Acre Wood!")
+# welcome()
+'''
+U 
+    Input name
+    Output
+P
+    - print statement
+I
+'''
+
+def greeting(name):
+    print(f"Welcome to The Hundred Acre Wood {name}! My name is Christopher Robin.")
+
+# greeting("Michael")
+# greeting("Winnie the Pooh")
+
+
+""""
+Problem 3: Catchphrase
+P
+    - if character == 
+        then print ()
+        .....
+    - else print "Sorry! I don't know <character>'s catchphrase!"
+"""
+def print_catchphrase(character):
+    if character == "Pooh":
+        print("Oh bother!")
+    elif character == "Tigger":
+        print("TTFN: Ta-ta for now!")
+    elif character == "Eeyore"	:
+        print("Thanks for noticing me.")
+    elif character == "Christopher Robin"	:
+        print("Silly old bear.")
+    else:
+        print(f"Sorry! I don't know {character}'s catchphrase!")
+
+character = "Pooh"
+print_catchphrase(character)
+
+character = "Piglet"
+print_catchphrase(character)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # U-nderstand
      # Understand what the interviewer is asking for 
      # by using test cases and questions about the problem.

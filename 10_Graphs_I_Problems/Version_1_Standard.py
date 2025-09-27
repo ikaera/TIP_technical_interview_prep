@@ -1,4 +1,95 @@
 from collections import deque
+'''Problem 1: Graphing Flights
+The following graph represents the different flights offered by CodePath Airlines. Each node or vertex represents an airport (JFK - New York City, LAX - Los Angeles, DFW - Dallas Fort Worth, and ATL - Atlanta), and an edge between two vertices indicates that CodePath airlines offers flights between those two airports.
+
+Create a variable flights that represents the undirected graph below as an adjacency dictionary, where each node's value is represented by a string with the airport's name (ex. "JFK").
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
+
+"""
+JFK ----- LAX
+|
+|
+DFW ----- ATL
+"""
+# No starter code is provided for this problem
+flights = {
+    'JFK': ['LAX', 'DFW'],
+    'LAX': ['JFK'] ,
+    'DFW': ['ATL', 'JFK'],
+    'ATL': ['DFW']
+}
+
+# Example Usage:
+print(list(flights.keys()))
+print(list(flights.values()))
+print(flights["JFK"])
+''''
+Example Output:
+
+['JFK', 'LAX', 'DFW', 'ATL']
+[['LAX', 'DFW'], ['JFK'], ['ATL', 'JFK'], ['DFW']]
+['LAX', 'DFW']
+💡 Hint: Introduction to Graphs
+This problem requires you to be familiar with the graph data structure and the different methods for representing graphs. Check out the Unit 10 Cheatsheet if you are unfamiliar with these concepts.
+'''
+##############################
+'''
+
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
+
+#################################
+'''
+
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
+
+##############################
+'''
+
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
 
 '''
 
