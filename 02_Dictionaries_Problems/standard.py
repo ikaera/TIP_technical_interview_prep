@@ -283,8 +283,8 @@ def distinct_averages(species_populations):
 species_populations1 = [4,1,4,0,3,5]
 species_populations2 = [1,100]
 
-print(distinct_averages(species_populations1))
-print(distinct_averages(species_populations2)) 
+# print(distinct_averages(species_populations1))
+# print(distinct_averages(species_populations2)) 
 
 '''
 Example Output:
@@ -301,3 +301,80 @@ Example 2 Explanation:
 There is only one average to be calculated after removing 1 and 100, 
 so we return 1.
 '''
+
+'''Standard Problem Set Version 2
+Problem 1: Space Crew
+Given two lists of length n, crew and position, map the space station crew to their position on board the international space station.
+
+Each crew member crew[i] has job position[i] on board, where 0 <= i < n and len(crew) == len(position).
+
+Hint: Introduction to dictionaries
+    
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases (see bellow)
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
+def space_crew(crew, position):
+    # step 1
+    crew_position_dict = {}
+    # step 2: Iterate thru the lists 
+    n = len(crew)
+    for i in range(n):
+        key = crew[i]
+        value = position [i]
+        crew_position_dict[key] = value
+    # outside of for loop return
+    return crew_position_dict
+
+# Example Usage:
+
+exp70_crew = ["Andreas Mogensen", "Jasmin Moghbeli", "Satoshi Furukawa", "Loral O'Hara", "Konstantin Borisov"]
+exp70_positions = ["Commander", "Flight Engineer", "Flight Engineer", " Flight Engineer", "Flight Engineer"] 
+
+ax3_crew = ["Michael Lopez-Alegria", "Walter Villadei", "Alper Gezeravci", "Marcus Wandt"]
+ax3_positions = ["Commander", "Mission Pilot", "Mission Specialist", "Mission Specialist"]
+
+# print(space_crew(exp70_crew, exp70_positions))
+# print(space_crew(ax3_crew, ax3_positions))
+r'''Example Output:
+
+{
+    "Andreas Mogensen": "Commander",
+    "Jasmin Moghbeli": "Flight Engineer",
+    "Satoshi Furukawa": "Flight Engineer",
+    "Loral O'Hara": "Flight Engineer",
+    "Konstantin Borisov": "Flight Engineer",
+}
+
+{
+    "Michael López-Alegría": "Commander",
+    "Walter Villadei": "Mission Pilot",
+    "Alper Gezeravcı": "Mission Specialist",
+    "Marcus Wandt": "Mission Specialist"
+}'''
+####################################
+
+'''    
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
+
+
+###########################
