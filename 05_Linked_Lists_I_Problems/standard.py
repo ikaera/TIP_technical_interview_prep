@@ -1,3 +1,125 @@
+''' Week 5
+Breakout Problems Session 2
+Standard Problem Set Version 1
+Problem 1: Mutual Friends
+U - Understand
+    I - Input
+        one parameter, a Villager instance new_contact
+    O - Output 
+        returns a list with the name of all friends the current villager and new_contact have in common.
+    C - constraints/considerations
+    E - example/edge cases
+        no mutual friends return empty.
+P - Plan
+    High-level: 
+
+    Steps: 
+    1. Init list result
+    2. Loop though the the friends  
+
+I - Implement
+
+'''
+class Villager:
+    def __init__(self, name, species, catchphrase):
+        self.name = name
+        self.species = species
+        self.catchphrase = catchphrase
+        self.friends = []
+
+    def get_mutuals(self, new_contact):
+        result = []
+        for friend in self.friends:
+            if friend in new_contact.friends:
+                result.append(friend.name)
+        return result
+# time and space O(n)
+bob = Villager("Bob", "Cat", "pthhhpth")
+marshal = Villager("Marshal", "Squirrel", "sulky")
+ankha = Villager("Ankha", "Cat", "me meow")
+fauna = Villager("Fauna", "Deer", "dearie")
+raymond = Villager("Raymond", "Cat", "crisp")
+stitches = Villager("Stitches", "Cub", "stuffin")
+
+bob.friends = [stitches, raymond, fauna]
+marshal.friends = [raymond, ankha, fauna]
+# print(bob.get_mutuals(marshal))
+
+ankha.friends = [marshal]
+# print(bob.get_mutuals(ankha))
+'''
+U - Understand
+
+    I - Input
+        head
+    O - Output         
+        prints the values of the list has also been provided for testing purposes
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
+class Node:
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
+
+# For testing
+def print_linked_list(head):
+    current = head
+    while current:
+        print(current.value, end=" -> " if current.next else "\n")
+        current = current.next
+
+kk_slider = Node("K.K. Slider")
+harriet = Node("Harriet")
+saharah = Node("Saharah")
+isabelle = Node("Isabelle")
+
+# Add code here to link the above nodes
+kk_slider.next = harriet
+harriet.next = saharah
+saharah.next = isabelle
+
+# print_linked_list(kk_slider)
+
+'''
+Problem 3: Daily Tasks
+U - Understand
+    I - Input
+        head
+    O - Output         
+        prints the values of the list has also been provided for testing purposes
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
+
+'''
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
+
+
+
 '''
 Standard Problem Set Version 1
 Problem 1: New Horizons
@@ -415,3 +537,275 @@ node_two.next = node_three
 # Input List: 5 -> 6 -> 7
 # print_linked_list(halve_list(node_one))
 
+'''Linked Lists II
+Standard Problem Set Version 1
+Problem 1: Building a Playlist
+U - Understand
+    I - Input - NO
+    O - Output  - NO
+    C - constraints/considerations - 
+    E - example/edge cases
+        ll is empty 
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
+class SongNode:
+    def __init__(self, song, next=None):
+        self.song = song
+        self.next = next
+
+# For testing
+def print_linked_list(node):
+    current = node
+    while current:
+        print(current.song, end=" -> " if current.next else "")
+        current = current.next
+    print()
+        
+# top_hits_2010s = SongNode("Uptown Funk", SongNode("Party Rock Anthem", SongNode("Bad Romance")))
+bad_romance = SongNode("Bad Romance")
+party_rock_anthem = SongNode("Party Rock Anthem", bad_romance)
+top_hits_2010s = SongNode("Uptown Funk", party_rock_anthem)
+
+# print_linked_list(top_hits_2010s)
+
+
+'''
+Problem 2: Top Artists
+Given the head of a linked list playlist, return a dictionary that maps each artist in the list to its frequency.
+
+Evaluate the time complexity of your solution. Define your variables and provide a rationale for why you believe your solution has the stated time and space complexity.
+U - Understand
+    I - Input - head of the ll
+    O - Output - dictionary mapping each artist in the list to its frequency 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+    Steps: 
+        - create a dictionary 'result'
+        - traverse the ll 
+            - 
+
+I - Implement
+'''
+class SongNode:
+    def __init__(self, song, artist, next=None):
+        self.song = song
+        self.artist = artist
+        self.next = next
+
+# For testing
+def print_linked_list(node):
+    current = node
+    while current:
+        print((current.song, current.artist), end=" -> " if current.next else "")
+        current = current.next
+    print()
+
+
+def get_artist_frequency(playlist):
+    results = {}
+    current = playlist
+    while current:
+        if current.artist in results:
+            results[current.artist] +=1
+        else:
+            results[current.artist] = 1
+        current = current.next
+    
+    return results
+# complexity time: O(n) and space: O(n)
+# Example Usage:
+playlist = SongNode("Saturn", "SZA", 
+                SongNode("Who", "Jimin", 
+                        SongNode("Espresso", "Sabrina Carpenter", 
+                                SongNode("Snooze", "SZA"))))
+
+# print(get_artist_frequency(playlist))
+
+# Example Output:
+# { "SZA": 2, "Jimin" : 1, "Sabrina Carpenter": 1}
+
+
+'''Problem 3: Glitching Out
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
+class SongNode:
+    def __init__(self, song, artist, next=None):
+        self.song = song
+        self.artist = artist
+        self.next = next        
+# For testing
+def print_linked_list(node):
+    current = node
+    while current:
+        print((current.song, current.artist), end=" -> " if current.next else "")
+        current = current.next
+    print()
+# Function with a bug!
+def remove_song(playlist_head, song):
+    if not playlist_head:
+        return None
+    if playlist_head.song == song:
+        return playlist_head.next
+
+    current = playlist_head
+    while current.next:
+        if current.next.song == song:
+            current.next = current.next.next  
+            return playlist_head 
+        current = current.next
+    return playlist_head
+# complexity time: O(n) and space: O(1)
+
+# Example Usage:
+playlist = SongNode("SOS", "ABBA", 
+                SongNode("Simple Twist of Fate", "Bob Dylan",
+                    SongNode("Dreams", "Fleetwood Mac",
+                        SongNode("Lovely Day", "Bill Withers"))))
+
+# print_linked_list(remove_song(playlist, "Dreams"))
+
+# Expected Output:
+# ('SOS', 'ABBA') -> ('Simple Twist of Fate', 'Bob Dylan') -> ('Lovely Day', 'Bill Withers')
+
+'''Problem 4: On Repeat
+
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+    - slow and fast
+        - slow will go one step ahead and
+
+I - Implement
+'''
+class SongNode:
+    def __init__(self, song, artist, next=None):
+        self.song = song
+        self.artist = artist
+        self.next = next
+
+def on_repeat(playlist_head):
+    pass
+
+'''
+Standard Problem Set Version 1
+Problem 2: Breaking the Cycle
+U - Understand
+    I - Input - head of the ll
+    O - Output - returns an array containing all values that are part of any cycle in evidence. 
+    C - constraints/considerations - Return the values in any order.
+    E - example/edge cases:
+        - empty ll, 
+        - only 1 node
+P - Plan
+    High-level: 
+    Steps:         
+        Detect cycle: 
+        - if not 'evidence' return False
+        - slow and fast ptr => evidence (head)
+        - while (fast and fast.next):
+            - slow moves 1 step ahead
+            - fast moves 2 steps ahead
+            - If they meet, there's a cycle
+        fast == slow are the end of the cycle
+        Find the start of the array:
+        we can reset slow to head or evidence
+        - while :
+            slow 1 step ahead
+            fast 1 step ahead
+        Append the array
+        start = slow
+        temp = start
+        init result_array
+        while:
+            append temp. values to the result_array
+            move temp one step a time
+        return result_array
+I - Implement
+'''
+class Node:
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
+
+def collect_false_evidence(evidence):
+    if not evidence:
+        return False        
+    slow = fast = evidence
+    # 1
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+        if slow != fast: 
+            return []
+        else: 
+            break
+    # 2
+    slow = evidence
+    while slow != fast:
+        slow = slow.next
+        fast = fast.next
+    #3
+    start = slow
+    result_array = []
+    tmp = start
+    while True:
+        result_array.append(tmp.value)
+        tmp = tmp.next
+        if tmp == start:
+            break
+    return result_array
+
+clue1 = Node("Unmarked sedan seen near the crime scene")
+clue2 = Node("The stolen goods are at an abandoned warehouse")
+clue3 = Node("The mayor is accepting bribes")
+clue4 = Node("They dumped their disguise in the lake")
+clue1.next = clue2
+clue2.next = clue3
+clue3.next = clue4
+clue4.next = clue2
+
+clue5 = Node("A masked figure was seen fleeing the scene")
+clue6 = Node("Footprints lead to the nearby woods")
+clue7 = Node("A broken window was found at the back")
+clue5.next = clue6
+clue6.next = clue7
+
+# print(collect_false_evidence(clue1))
+# print(collect_false_evidence(clue5))
+'''
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''

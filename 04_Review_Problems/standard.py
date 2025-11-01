@@ -90,3 +90,31 @@ Refactor the code to fix the bug(s) and provide the correct implementation.
 
     I - Implement
 '''
+
+'''
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
+
+'''
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''

@@ -1,5 +1,103 @@
+'''
+Unit 3
+Session 
+1: Stacks, Queues, and Two Pointer
+Advanced Problem Set Version 1
+======================
+Problem 1: Arrange Guest Arrival Order
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
+
+
+'''    
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    "DDD"
+    "output: 4321"
+    "D" "D" "D"
+    43  32   21
+
+    "IIIDIDDD" 
+    "output: 123549876"
+    
+    "IIIDD" 
+    "output: 123654"
+
+    "IIIDID"
+    "output: 123546"
+
+    "I" "I" "I" "D"
+    12  23   35 54
+
+    "D"
+    "output: 21"
+
+    "ID"
+    "output: 132"
+    "12"   "23"
+    I      D
+
+
+    'I' - The next guest should have a higher number than the previous guest.
+    'D' - The next guest should have a lower number than the previous guest.
+
+
+    "III"
+    "output: 1234"
+    
+
+    Steps: 
+
+I - Implement
+'''
+# def arrange_guest_arrival_order(arrival_pattern):
+#     output = []
+#     d_stack = []
+#     len_arrival = len(arrival_pattern)
+
+#     for i in range(len_arrival + 1):
+#         if(arrival_pattern[i] == 'I'):
+#             output.append(str(i+1))
+#         else: # == 'D'
+#             d_stack.append(str(i+1))
+#     #add stack to output queue lofi
+#     #still list of strings need to join before return
+#     return output
+
+'''    
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
+
 # Advanced Problem Set Version 2
 '''
+Advanced Problem Set Version 2
+Problem 1: Extra Treats
 Problem 1: Extra Treats
 In a pet adoption center, there are two groups of volunteers: the "Cat Lovers" and the "Dog Lovers."
 
@@ -21,46 +119,51 @@ Predict which group will finally announce the victory and prioritize their prefe
 4. If `cat_queue` is empty, return "Dog Lovers"; if `dog_queue` is empty, return "Cat Lovers".
 '''
 
+
 '''
-    U - Understand
-        I - Input
-        O - Output 
-        C - constraints/considerations
-        E - example/edge cases
-    P - Plan
-        High-level: 
+=========================
+Session 2 (Breakout Problems) 
+=========================
+=> Standard Problem Set Version 1
+-------------------------
 
-        Steps: 
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
 
-    I - Implement
-'''
+    Steps: 
 
-
-'''    
-    U - Understand
-        I - Input
-        O - Output 
-        C - constraints/considerations
-        E - example/edge cases
-    P - Plan
-        High-level: 
-
-        Steps: 
-
-    I - Implement
+I - Implement
 '''
 
+'''
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
 
-'''    
-    U - Understand
-        I - Input
-        O - Output 
-        C - constraints/considerations
-        E - example/edge cases
-    P - Plan
-        High-level: 
+    Steps: 
 
-        Steps: 
+I - Implement
+'''
 
-    I - Implement
+'''
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
 '''

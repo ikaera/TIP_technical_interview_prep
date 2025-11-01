@@ -1,3 +1,69 @@
+''' Session 1: Recursion, Breakout Problems
+Standard Problem Set Version 1
+U - Understand
+    I - Input - a list of strings
+    O - Output  -  int  total nums of suits
+    C - constraints/considerations: 
+        implement without len() function
+    E - example/edge cases
+        an empty list => 0
+P - Plan
+    High-level: 
+    Steps: 
+    Implement the solution iteratively without the use of the len() function:
+        - count=0
+        - for _ in suits:
+            - count += 1
+        - return count 
+
+        Implement the solution recursively:
+         - base case: 
+            if not suits: 
+                return 0
+         - recursive case: 
+            - return 1 + count_suits_recursive(suits[:-1])
+
+I - Implement
+'''
+def count_suits_iterative(suits):
+    count = 0
+    for _ in suits:
+        count += 1
+    return count
+
+def count_suits_recursive(suits):
+    if not suits:
+        return 0
+    return 1 + count_suits_recursive(suits[1:])
+# comeplexity: space O(len())
+
+# print(count_suits_iterative(["Mark I", "Mark II", "Mark III"]))
+# print(count_suits_recursive(["Mark I", "Mark II", "Mark III"]))
+
+'''
+U - Understand
+    I - Input - an array of integers stones representing the power of each stones
+    O - Output return the total power using a recursive approach.
+    C - constraints/considerations - 
+    E - example/edge cases
+            - an empty array => 0
+P - Plan
+    High-level: 
+    Steps: 
+     - base case: if not stones => 0
+     - recursive case: 
+        return stones[-1] + sum_stones(stones[:-1])
+I - Implement
+'''
+def sum_stones(stones):
+    if not stones: 
+        return 0
+    return stones[0] + sum_stones(stones[1:])
+
+# Example Usage:
+print(sum_stones([5, 10, 15, 20, 25, 30]))
+print(sum_stones([12, 8, 22, 16, 10]))
+
 ''' 
 TIP102 Unit 7 Session 1 Standard
 Raymond Chen edited this page on Aug 21, 2024 · 3 revisions

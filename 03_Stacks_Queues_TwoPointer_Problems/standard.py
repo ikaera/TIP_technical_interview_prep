@@ -179,7 +179,8 @@ def engagement_boost(engagements):
     return result
 
 # Example Usage:
-'''print(engagement_boost([-4, -1, 0, 3, 10]))
+'''
+print(engagement_boost([-4, -1, 0, 3, 10]))
 print(engagement_boost([-7, -3, 2, 3, 11]))
 print(engagement_boost([-7, -3, 2, -3, -11]))
 '''
@@ -225,12 +226,26 @@ def engagement_boost_2pt(engagements):
     return results_list
 
 # Example Usage:
-print(engagement_boost_2pt([-4, -1, 0, 3, 10]))
-print(engagement_boost_2pt([-7, -3, 2, 3, 11]))
-print(engagement_boost_2pt([-20, -10, -7, -3, 2, 3, 11, 20]))
+# print(engagement_boost_2pt([-4, -1, 0, 3, 10]))
+# print(engagement_boost_2pt([-7, -3, 2, 3, 11]))
+# print(engagement_boost_2pt([-20, -10, -7, -3, 2, 3, 11, 20]))
 
 '''Example Output:
 
 [0, 1, 9, 16, 100]
 [4, 9, 9, 49, 121]       
+'''
+
+'''
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
 '''

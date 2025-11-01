@@ -257,3 +257,103 @@ code2 = "haha"
 # Explanation: Select index 4 and delete it: word becomes "argh" and each character has a frequency of 1.
 
 # False
+
+'''   
+Problem 1: Balanced Art Collection
+
+    U - Understand
+        I - Input: an integer array art_pieces representing the value of each art piece,
+        O - Output: the length of the longest balanced subsequence. 
+        C - constraints/considerations
+        E - example/edge cases
+        empty array, 
+    P - Plan
+        High-level: 
+
+        Steps: 
+        - construct a frequency map
+        - find 2 largest frequency values 
+            - iterate key value pairs and keep track 
+            - 
+        - return sum of 2 values
+    I - Implement
+'''
+def find_balanced_subsequence(art_pieces):
+    freq_map = dict()    
+    for art in art_pieces:
+        if art in freq_map:
+            freq_map[art] += 1
+        else:
+            freq_map[art] = 1
+          
+    longest = 0
+    for val in freq_map:
+        if val+1 in freq_map:
+            curr_length = freq_map[val] + freq_map[val+1]
+            longest = max(longest, curr_length)
+    return longest
+
+# Example Usage:
+
+art_pieces1 = [1,3,2,2,5,2,3,7]
+art_pieces2 = [1,2,3,4]
+art_pieces3 = [1,1,1,1]
+
+print(find_balanced_subsequence(art_pieces1))
+print(find_balanced_subsequence(art_pieces2))
+print(find_balanced_subsequence(art_pieces3))
+# Example Output:
+
+# 5
+# Example 1 Explanation:  The longest balanced subsequence is [3,2,2,2,3].
+
+# 2
+# 0
+'''
+Problem 2: Verifying Authenticity    
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+            
+        Steps: 
+            1) Find `n`, the maximum value in `art_pieces`.
+            2) Check if the length of `art_pieces` is `n + 1`.
+            3) Count the occurrences of each piece in `art_pieces`.
+            4) Verify that the counts match the structure of `base[n]`.
+            - Each number from `1` to `n - 1` should appear exactly once.
+            - The number `n` should appear exactly twice.
+            5) Return `True` if the array is authentic, otherwise return `False`.
+    I - Implement
+'''
+
+'''    
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
+
+'''    
+    U - Understand
+        I - Input
+        O - Output 
+        C - constraints/considerations
+        E - example/edge cases
+    P - Plan
+        High-level: 
+
+        Steps: 
+
+    I - Implement
+'''
