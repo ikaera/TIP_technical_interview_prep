@@ -61,8 +61,8 @@ def sum_stones(stones):
     return stones[0] + sum_stones(stones[1:])
 
 # Example Usage:
-print(sum_stones([5, 10, 15, 20, 25, 30]))
-print(sum_stones([12, 8, 22, 16, 10]))
+# print(sum_stones([5, 10, 15, 20, 25, 30]))
+# print(sum_stones([12, 8, 22, 16, 10]))
 
 ''' 
 TIP102 Unit 7 Session 1 Standard
