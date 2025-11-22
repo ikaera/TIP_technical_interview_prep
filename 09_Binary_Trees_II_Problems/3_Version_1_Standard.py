@@ -579,41 +579,6 @@ E - evaluate
         (think critically about the advantages and disadvantages of your chosen approach).
 '''
 
-'''    
-U - Understand
-    I - Input
-    O - Output 
-    C - constraints/considerations
-    E - example/edge cases
-P - Plan
-    High-level: 
-
-    Steps: 
-
-I - Implement
-'''
-'''
-R- Review
-
-E - evaluate 
-    - Time  complexity:
-    - Space complexity:
-        (think critically about the advantages and disadvantages of your chosen approach).
-'''
-
-'''    
-U - Understand
-    I - Input
-    O - Output 
-    C - constraints/considerations
-    E - example/edge cases
-P - Plan
-    High-level: 
-
-    Steps: 
-
-I - Implement
-'''
 '''
 R- Review
 
@@ -709,13 +674,50 @@ r"""
 guest3 = TreeNode("John Doe", TreeNode("6 ft"))
 guest4 = TreeNode("John Doe", None, TreeNode("6 ft"))
 
-print(is_clone(guest1, guest2))
-print(is_clone(guest3, guest4))
-print(is_clone(None, None))
+# print(is_clone(guest1, guest2))
+# print(is_clone(guest3, guest4))
+# print(is_clone(None, None))
 
 r'''
 Example Output:
 
 True
 False
+'''
+
+
+'''    
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
+'''
+R- Review
+
+E - evaluate 
+    - Time  complexity:
+    - Space complexity:
+        (think critically about the advantages and disadvantages of your chosen approach).
+'''
+
+'''    
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
 '''

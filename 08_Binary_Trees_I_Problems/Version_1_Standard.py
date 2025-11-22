@@ -1,4 +1,3 @@
-
 # Testing your Binary Tree (Printing)
 from collections import deque 
 
@@ -231,7 +230,7 @@ root1 = TreeNode(3,
                           TreeNode(15),
                           TreeNode(7)))
 
-print(is_balanced(root1))  # Expected: True
+# print(is_balanced(root1))  # Expected: True
 
 # Test input 2: root = [1, 2, 2, 3, 3, None, None, 4, 4]
 root2 = TreeNode(1,
@@ -242,7 +241,7 @@ root2 = TreeNode(1,
                           TreeNode(3)),
                  TreeNode(2))
 
-print(is_balanced(root2))  # Expected: False
+# print(is_balanced(root2))  # Expected: False
 
 '''  
 Write a function to determine if a binary tree is a valid binary search tree (BST). A BST is valid if:
@@ -328,7 +327,120 @@ root = TreeNode(1, TreeNode(2, TreeNode(4)), TreeNode(3, TreeNode(5), TreeNode(6
 
     I - Implement
 '''
+class TreeNode:
+    def __init__(self, value, left=None, right=None):
+        self.val = value
+        self.left = left
+        self.right = right
 
+root = TreeNode("Trunk", TreeNode('Mcintosh'), TreeNode("Granny Smith"))
+root.left.left = TreeNode("Fuji") 
+root.left.right = TreeNode("Opal")
+root.right.right = TreeNode("Gala")
+root.right.left = TreeNode("Crab")
+
+# print_tree(root)
+
+'''    Problem 2: Calculating Yield
+    U - Understand
+        I - Input - root
+        O - Output - int, Return the result of evaluating the root node.
+        C - constraints/considerations: exactly 3 nodes
+            - The root has a string value of either "+", "-", "*", or "-".
+            - Leaf nodes have an integer value.
+        E - example/edge cases
+    P - Plan
+        High-level: use if else stmt
+        Steps: 
+            - 
+            - 
+    I - Implement
+'''
+class TreeNode:
+    def __init__(self, value, left=None, right=None):
+        self.val = value
+        self.left = left
+        self.right = right
+
+def calculate_yield(root):
+    right = root.right.val
+    left = root.left.val
+    root_val = root.val
+    if root_val == "+":
+        return left + right
+    elif root_val == "-":
+        return left - right
+    elif root_val == "*":
+        return left * right
+    else: 
+        if right == 0:
+            return "we cannot divide by 0"             
+        else: return left / right
+"""
+    +
+  /   \
+ 7     5
+"""
+apple_tree = TreeNode("/", TreeNode(7), TreeNode(0))
+# print(calculate_yield(apple_tree))
+# time and space complexity O(1)
+'''    
+    U - Understand
+        I - Input - Given the root of the plant, 
+        O - Output - return a list with the value of each node in the path from the root node to the rightmost leaf node.
+        C - constraints/considerations
+        E - example/edge cases
+            - If there is no right child, return only the root node value (the rightmost path in this case is just the root node).
+    P - Plan
+        High-level: 
+        Steps: 
+            - create result list with root. val
+            - traverse root.right, til not right child:
+                add right.val to the result list
+    I - Implement
+'''
+class TreeNode:
+    def __init__(self, value, left=None, right=None):
+        self.val = value
+        self.left = left
+        self.right = right
+
+# def right_vine(root):
+#     if not root:
+#         return []
+#     result = [root.val]
+#     temp = root.right
+#     while temp:
+#         result.append(temp.val)
+#         temp = temp.right
+#     return result
+def right_vine(root):
+    if not root:
+        return []
+    return [root.val] + right_vine(root.right)
+
+"""
+        Root
+      /      \
+    Node1    Node2
+  /         /    \
+Leaf1    Leaf2  Leaf3
+"""
+ivy1 = TreeNode("Root", 
+                TreeNode("Node1", TreeNode("Leaf1")),
+                TreeNode("Node2", TreeNode("Leaf2"), TreeNode("Leaf3")))
+
+"""
+      Root
+      /  
+    Node1
+    /
+  Leaf1  
+"""
+ivy2 = TreeNode("Root", TreeNode("Node1", TreeNode("Leaf1")))
+
+# print(right_vine(ivy1))
+# print(right_vine(ivy2))
 
 '''    
     U - Understand
