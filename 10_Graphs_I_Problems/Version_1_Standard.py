@@ -41,7 +41,7 @@ Example Output:
 [['LAX', 'DFW'], ['JFK'], ['ATL', 'JFK'], ['DFW']]
 ['LAX', 'DFW']
 💡 Hint: Introduction to Graphs
-This problem requires you to be familiar with the graph data structure and the different methods for representing graphs. Check out the Unit 10 Cheatsheet if you are unfamiliar with these concepts.
+This problem requires you to be familiar with the graph data structure and the different methods for representing graphs. Check out the Unit 10 Cheat sheet if you are unfamiliar with these concepts.
 '''
 ##############################
 '''

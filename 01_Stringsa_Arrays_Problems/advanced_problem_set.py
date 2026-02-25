@@ -1,3 +1,144 @@
+'''    
+U - Understand
+    I - Input --> items: list of items (strings)
+    O - Output --> int : index of target
+    C - constraints/considerations --> empty list
+    E - example/edge cases
+P - Plan
+    High-level: 
+    Using for loop, iterate through items using its index
+	Return index if target is found, otherwise return -1
+	
+    Steps: 
+
+I - Implement
+'''
+def linear_search(items, target):
+	for i in range(len(items)):
+		if items[i] == target: 
+			return i
+	return -1
+
+items = ['haycorn', 'haycorn', 'haycorn', 'hunny', 'haycorn']
+target = 'hunny'
+# print(linear_search(items, target))
+
+items = ['bed', 'blue jacket', 'red shirt', 'hunny']
+target = 'red balloon'
+# print(linear_search(items, target))
+
+items = []
+target = ''
+# print(linear_search(items, target))
+
+'''    
+U - Understand
+    I - Input: list : operations (as str) in new PL
+    O - Output: int: final value of tigger
+    C - constraints/considerations: 
+    E - example/edge cases: empty list
+P - Plan
+    High-level: 
+    loop through operations, check for which str
+	depending on the str, do whatever operation on tigger
+    Steps: 
+
+I - Implement
+'''
+def final_value_after_operations(operations):
+    tigger = 1	
+    for operation in operations:
+        if operation == "bouncy" or operation == "flouncy":
+            tigger += 1
+        elif operation == "trouncy" or operation == "pouncy":
+            tigger -= 1
+
+    return tigger
+
+operations = ["trouncy", "flouncy", "flouncy"]
+# print(final_value_after_operations(operations))
+
+operations = ["bouncy", "bouncy", "flouncy"]
+# print(final_value_after_operations(operations))
+
+operations = []
+# print(final_value_after_operations(operations))
+# Example Output:  2   4    1
+
+'''    
+U - Understand
+    I - Input  string: word
+    O - Output remaining string
+    C - constraints/considerations - function should be case insensitive
+    E - example/edge cases: empty string return empty string
+P - Plan
+    High-level: 
+
+    Steps: 
+	word in lower case
+	result.replace() t, i, gg, and er with ''
+	result.replace()
+	result.replace()
+    result.replace()
+	return result
+	
+I - Implement
+'''
+def tiggerfy(word):
+	result = word.lower()
+	'''
+	string.replace(old, new, count)
+        old → substring you want to replace
+        new → replacement text
+        count (optional) → how many occurrences to replace (default = all)'''
+	result = result.replace("t", '')
+	result = result.replace("i", '')
+	result = result.replace("gg", '')
+	result = result.replace("er", '')
+	return result
+	
+	
+word = "Trigger"
+# print(tiggerfy(word))
+
+word = "eggplant"
+# print(tiggerfy(word))
+
+word = "Choir"
+# print(tiggerfy(word))
+
+'''    
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
+'''    
+U - Understand
+    I - Input
+    O - Output 
+    C - constraints/considerations
+    E - example/edge cases
+P - Plan
+    High-level: 
+
+    Steps: 
+
+I - Implement
+'''
+
+
+
+
+
+
 '''
 Problem 1: Hunny Hunt
 Write a function linear_search() to help Winnie the Pooh locate his lost items. The function accepts a list items and a target value as parameters. The function should return the first index of target in items, and -1 if target is not in the lst. Do not use any built-in functions.
